@@ -27,20 +27,20 @@ public class Taller1 {
      y la convierta a metros/seg y a metros/hora. Retorne un string del tipo: ### m/s - ### m/h. Si hay error, 
      devuelva el string "Error en la conversion"
     */
-    public static String Convertir_km_seg(int Km_seg) {
+   public static String Convertir_km_seg(int Km_seg) {
 
         try {
 
-           int TotalMet_Seg = 0;
+           double TotalMet_Seg = 0;
            final int metros = 1000;
            TotalMet_Seg = Km_seg * metros;
 
-           int TotalMetrosHora = 0;
+           double TotalMetrosHora = 0;
            final int hora = 3600;
            TotalMetrosHora = TotalMet_Seg*hora;
            
           String txtreturn = " ";
-           txtreturn = TotalMet_Seg + " m/s // " + TotalMetrosHora + " m/h "; 
+           txtreturn = TotalMet_Seg+" m/s - "+TotalMetrosHora+ " m/h"; 
            return txtreturn;
         }
         catch (Exception e){
@@ -124,19 +124,18 @@ public static int Calcular_segs (short NumDias, short NumHora,short NumMin, shor
   public static String Calcular_peso_carga(float PesoCarga, float PesoCamion){
 
     try {
-      float TotalKilos = 0;
-      float Totaltoneladas = 0;
+      double TotalKilos = 0;
+      double Totaltoneladas = 0;
       final float kilos = 1000;
       TotalKilos = kilos*(PesoCarga-PesoCamion);
       Totaltoneladas = PesoCarga - PesoCamion;
       String TotalKilTon = "";
-      TotalKilTon = +TotalKilos + " Kilos - Toneladas " + Totaltoneladas;
+      TotalKilTon = +TotalKilos + " kilos - " + Totaltoneladas+ " toneladas";
       return TotalKilTon;
     } catch (Exception e) {
       return "Error en la funcion Calcular_peso_carga";
     }
    }
-   
 
    /*8.	Diseñe un algoritmo e implemente la función Calcular_horasxviaje que calcule y devuelva un float con las horas  
    necesarias para alcanzar un destino que es recibido en un string, además de un short con la distancia en kms
