@@ -100,7 +100,7 @@ public static float Convertir_cent_far (float GradCel){
    el número de minutos y número segundos como enteros bytes, positivos y devuelva todo en segundos en un entero. 
    Si hay algún error, devuelva -1.
    */
-public static int Calcular_segs (byte NumDias, byte NumHora,byte NumMin, byte NumSeg){
+public static int Calcular_segs (short NumDias, short NumHora,short NumMin, short NumSeg){
 
     try {
       int TotalSeg = 0;
@@ -143,19 +143,14 @@ public static int Calcular_segs (byte NumDias, byte NumHora,byte NumMin, byte Nu
    otro dato short que es la velocidad  promedio que alcanzará también el vehículo en kilómetros/hora.  
    Si hay algún error, devuelva -1.
    */
-public static String Calcular_horasxviaje(String Destino, short Distanciakms, short kmHora ){
-
+  public static float Calcular_horasxviaje(String destino, short distancia, short velocidad) {
     try {
-     
-      short Hora = (short) (Distanciakms/kmHora);
-      String horasxviaje = "";
-      horasxviaje = "El total de horas esperado para una distancia de "+ Distanciakms+"k a "+kmHora+"k/h es "+Hora+"h para ir hacia "+Destino; 
-      return horasxviaje;
+        short horas = (short) (distancia / velocidad);
+        return (float) horas;
     } catch (Exception e) {
-       return "-1";
+        return -1;
     }
-   
-   }
+}
   
    
    /*9.	Un avión necesita cargar combustible para cubrir sus rutas programadas en el día. 
